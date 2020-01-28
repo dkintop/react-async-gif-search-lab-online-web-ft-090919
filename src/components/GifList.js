@@ -1,18 +1,14 @@
-import React, { Component } from "react";
-import GifListContainer from "../containers/GifListContainer";
+import React from "react";
 
-export default class GifList extends Component {
-  render() {
-    return (
-      <div>
-        <ul>
-          {this.props.gifs.forEach(element => {
-            <li>{element}</li>;
-          })}
-        </ul>
-      </div>
-    );
-  }
-}
+const GifList = props => {
+  console.log(props);
+  return (
+    <div>
+      {props.gifs.map(gif => (
+        <img key={gif.url} src={gif.url} alt="gif" />
+      ))}
+    </div>
+  );
+};
 
-export { GifList };
+export default GifList;
